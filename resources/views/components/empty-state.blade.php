@@ -1,0 +1,1 @@
+<div class="empty-state"><span class="empty-illustration" aria-hidden="true">{{ $icon ?? '🌷' }}</span><h3>{{ $title ?? 'Nothing here just yet' }}</h3><p>{{ $description ?? 'When you add something, it will bloom here.' }}</p>@isset($action)<a class="button" href="{{ $action }}">{{ $actionLabel ?? 'Get started' }}</a>@endisset</div>

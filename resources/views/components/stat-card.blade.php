@@ -1,0 +1,1 @@
+<article class="stat-card stat-{{ $tone ?? 'pink' }}"><span class="stat-icon">{{ $icon ?? '✿' }}</span><span class="stat-sticker" aria-hidden="true">✦</span><div><p>{{ $label }}</p><strong data-count-up="{{ $value }}">{{ $value }}</strong>@isset($hint)<small>{{ $hint }}</small>@endisset</div></article>
