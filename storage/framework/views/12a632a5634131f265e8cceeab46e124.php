@@ -1,0 +1,3 @@
+<?php ($label = ['expiring' => 'Expiring soon', 'active' => 'Active', 'expired' => 'Expired', 'pending' => 'Pending', 'inactive' => 'Inactive', 'new' => 'New', 'read' => 'Read', 'archived' => 'Archived'][$status] ?? ucfirst($status)); ?>
+<span class="status-badge status-<?php echo e($status); ?>"><span class="status-dot"></span><?php echo e($label); ?></span>
+<?php /**PATH A:\laragon\www\DomainManagementSystem\resources\views/components/status-badge.blade.php ENDPATH**/ ?>

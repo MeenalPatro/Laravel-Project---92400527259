@@ -1,0 +1,986 @@
+[2026-10-28 13:20:41] testing.DEBUG: DomainBloom role check rejected {"actual_role":null,"required_role":"user","active":null} 
+[2026-10-28 13:26:32] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php:829)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(983): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(963): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(786): Illuminate/Database/Connection->handleQueryException(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#18 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#25 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#67 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#69 {main}
+
+[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate/Database/Connectors/Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate/Database/Connectors/Connector->tryAgainIfCausedByLostConnection(Object(PDOException), 'mysql:host=127....', 'root', '', Array)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate/Database/Connectors/Connector->createConnection('mysql:host=127....', Array, Array)
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate/Database/Connectors/MySqlConnector->connect(Array)
+#5 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->Illuminate/Database/Connectors/{closure}()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1339): call_user_func(Object(Closure))
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getPdo()
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(423): Illuminate/Database/Connection->getPdoForSelect(false)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate/Database/Connection->Illuminate/Database/{closure}('select count(*)...', Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(983): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(963): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(786): Illuminate/Database/Connection->handleQueryException(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#25 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#28 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#67 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#69 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#70 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#71 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#72 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#73 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#74 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#75 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#76 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#77 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#78 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#79 {main}
+"} 
+[2026-10-28 13:26:46] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php:829)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(983): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(963): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(786): Illuminate/Database/Connection->handleQueryException(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#18 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#25 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#67 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#69 {main}
+
+[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate/Database/Connectors/Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate/Database/Connectors/Connector->tryAgainIfCausedByLostConnection(Object(PDOException), 'mysql:host=127....', 'root', '', Array)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate/Database/Connectors/Connector->createConnection('mysql:host=127....', Array, Array)
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate/Database/Connectors/MySqlConnector->connect(Array)
+#5 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->Illuminate/Database/Connectors/{closure}()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1339): call_user_func(Object(Closure))
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getPdo()
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(423): Illuminate/Database/Connection->getPdoForSelect(false)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate/Database/Connection->Illuminate/Database/{closure}('select count(*)...', Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(983): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(963): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(786): Illuminate/Database/Connection->handleQueryException(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#25 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#28 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#67 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#69 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#70 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#71 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#72 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#73 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#74 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#75 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#76 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#77 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#78 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#79 {main}
+"} 
+[2026-10-28 13:26:55] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php:829)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(983): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(963): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(786): Illuminate/Database/Connection->handleQueryException(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#18 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#25 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#67 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#69 {main}
+
+[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate/Database/Connectors/Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate/Database/Connectors/Connector->tryAgainIfCausedByLostConnection(Object(PDOException), 'mysql:host=127....', 'root', '', Array)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate/Database/Connectors/Connector->createConnection('mysql:host=127....', Array, Array)
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate/Database/Connectors/MySqlConnector->connect(Array)
+#5 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->Illuminate/Database/Connectors/{closure}()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1339): call_user_func(Object(Closure))
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getPdo()
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(423): Illuminate/Database/Connection->getPdoForSelect(false)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate/Database/Connection->Illuminate/Database/{closure}('select count(*)...', Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(983): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(963): Illuminate/Database/Connection->tryAgainIfCausedByLostConnection(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(786): Illuminate/Database/Connection->handleQueryException(Object(Illuminate/Database/QueryException), 'select count(*)...', Array, Object(Closure))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#25 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#28 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#67 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#69 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#70 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#71 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#72 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#73 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#74 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#75 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#76 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#77 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#78 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#79 {main}
+"} 
+[2026-10-28 13:27:33] testing.ERROR: Undefined variable $domain {"view":{"view":"A:\\laragon\\www\\DomainManagementSystem\\resources\\views\\admin\\domains\\edit.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1698855797 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#5705</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1698855797\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","record":"<pre class=sf-dump id=sf-dump-706082410 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\DomainRecord</span> {<a class=sf-dump-ref>#5634</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"6 characters\">sqlite</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"14 characters\">domain_records</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:13</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>user_id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>domain_name</span>\" => \"<span class=sf-dump-str title=\"16 characters\">mycreativecorner</span>\"
+    \"<span class=sf-dump-key>domain_extension</span>\" => \"<span class=sf-dump-str title=\"4 characters\">.com</span>\"
+    \"<span class=sf-dump-key>registrar</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cloudflare</span>\"
+    \"<span class=sf-dump-key>registration_date</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-01-10 00:00:00</span>\"
+    \"<span class=sf-dump-key>expiry_date</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2027-01-10 00:00:00</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"6 characters\">active</span>\"
+    \"<span class=sf-dump-key>auto_renewal</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>price</span>\" => <span class=sf-dump-num>18.99</span>
+    \"<span class=sf-dump-key>notes</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Personal portfolio</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-10-28 13:27:31</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-10-28 13:27:31</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:13</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>user_id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>domain_name</span>\" => \"<span class=sf-dump-str title=\"16 characters\">mycreativecorner</span>\"
+    \"<span class=sf-dump-key>domain_extension</span>\" => \"<span class=sf-dump-str title=\"4 characters\">.com</span>\"
+    \"<span class=sf-dump-key>registrar</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cloudflare</span>\"
+    \"<span class=sf-dump-key>registration_date</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-01-10 00:00:00</span>\"
+    \"<span class=sf-dump-key>expiry_date</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2027-01-10 00:00:00</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"6 characters\">active</span>\"
+    \"<span class=sf-dump-key>auto_renewal</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>price</span>\" => <span class=sf-dump-num>18.99</span>
+    \"<span class=sf-dump-key>notes</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Personal portfolio</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-10-28 13:27:31</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-10-28 13:27:31</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>registration_date</span>\" => \"<span class=sf-dump-str title=\"4 characters\">date</span>\"
+    \"<span class=sf-dump-key>expiry_date</span>\" => \"<span class=sf-dump-str title=\"4 characters\">date</span>\"
+    \"<span class=sf-dump-key>auto_renewal</span>\" => \"<span class=sf-dump-str title=\"7 characters\">boolean</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"9 characters\">decimal:2</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:10</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"7 characters\">user_id</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"11 characters\">domain_name</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"16 characters\">domain_extension</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"9 characters\">registrar</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"17 characters\">registration_date</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"11 characters\">expiry_date</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"12 characters\">auto_renewal</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"5 characters\">price</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"5 characters\">notes</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+</samp>}
+</pre><script>Sfdump(\"sf-dump-706082410\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","users":"<pre class=sf-dump id=sf-dump-1450716974 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#5675</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\User
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">User</span></span> {<a class=sf-dump-ref>#5677</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"6 characters\">sqlite</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:10</span> [ &#8230;10]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:10</span> [ &#8230;10]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+    </samp>}
+    <span class=sf-dump-index>1</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\User
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">User</span></span> {<a class=sf-dump-ref>#3501</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"6 characters\">sqlite</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:10</span> [ &#8230;10]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:10</span> [ &#8230;10]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1450716974\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":1,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $domain at A:/laragon/www/DomainManagementSystem/resources/views/admin/domains/edit.blade.php:5)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('A://laragon//www//...')
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate/Filesystem/Filesystem::Illuminate/Filesystem/{closure}()
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate/Filesystem/Filesystem->getRequire('A://laragon//www//...', Array)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(72): Illuminate/View/Engines/PhpEngine->evaluatePath('A://laragon//www//...', Array)
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/View.php(207): Illuminate/View/Engines/CompilerEngine->get('A://laragon//www//...', Array)
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/View.php(190): Illuminate/View/View->getContents()
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/View.php(159): Illuminate/View/View->renderContents()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate/View/View->render()
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate/Http/Response->setContent(Object(Illuminate/View/View))
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(918): Illuminate/Http/Response->__construct(Object(Illuminate/View/View), 200, Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(885): Illuminate/Routing/Router::toResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Router->prepareResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#15 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RequireRole.php(17): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RequireRole->handle(Object(Illuminate/Http/Request), Object(Closure), 'admin')
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#25 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php(586): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php(346): Illuminate/Foundation/Testing/TestCase->call('GET', 'http://localhos...', Array, Array, Array, Array)
+#56 A:/laragon/www/DomainManagementSystem/tests/Feature/DomainBloomTest.php(130): Illuminate/Foundation/Testing/TestCase->get('http://localhos...')
+#57 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestCase.php(1548): Tests/Feature/DomainBloomTest->test_admin_can_manage_records_and_cannot_delete_themselves_or_the_last_admin()
+#58 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestCase.php(686): PHPUnit/Framework/TestCase->runTest()
+#59 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestRunner.php(106): PHPUnit/Framework/TestCase->runBare()
+#60 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestCase.php(516): PHPUnit/Framework/TestRunner->run(Object(Tests/Feature/DomainBloomTest))
+#61 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestSuite.php(374): PHPUnit/Framework/TestCase->run()
+#62 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestSuite.php(374): PHPUnit/Framework/TestSuite->run()
+#63 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestSuite.php(374): PHPUnit/Framework/TestSuite->run()
+#64 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(64): PHPUnit/Framework/TestSuite->run()
+#65 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/TextUI/Application.php(205): PHPUnit/TextUI/TestRunner->run(Object(PHPUnit/TextUI/Configuration/Configuration), Object(PHPUnit/Runner/ResultCache/DefaultResultCache), Object(PHPUnit/Framework/TestSuite))
+#66 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/phpunit(104): PHPUnit/TextUI/Application->run(Array)
+#67 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $domain at A:/laragon/www/DomainManagementSystem/storage/framework/views/79da4c6035bd22e45f36e0826980f6b7.php:4)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'Undefined varia...', 'A://laragon//www//...', 4)
+#1 A:/laragon/www/DomainManagementSystem/storage/framework/views/79da4c6035bd22e45f36e0826980f6b7.php(4): Illuminate/Foundation/Bootstrap/HandleExceptions->Illuminate/Foundation/Bootstrap/{closure}(2, 'Undefined varia...', 'A://laragon//www//...', 4)
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('A://laragon//www//...')
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate/Filesystem/Filesystem::Illuminate/Filesystem/{closure}()
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate/Filesystem/Filesystem->getRequire('A://laragon//www//...', Array)
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(72): Illuminate/View/Engines/PhpEngine->evaluatePath('A://laragon//www//...', Array)
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/View.php(207): Illuminate/View/Engines/CompilerEngine->get('A://laragon//www//...', Array)
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/View.php(190): Illuminate/View/View->getContents()
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/View.php(159): Illuminate/View/View->renderContents()
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate/View/View->render()
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate/Http/Response->setContent(Object(Illuminate/View/View))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(918): Illuminate/Http/Response->__construct(Object(Illuminate/View/View), 200, Array)
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(885): Illuminate/Routing/Router::toResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Router->prepareResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#17 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RequireRole.php(17): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RequireRole->handle(Object(Illuminate/Http/Request), Object(Closure), 'admin')
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php(586): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php(346): Illuminate/Foundation/Testing/TestCase->call('GET', 'http://localhos...', Array, Array, Array, Array)
+#58 A:/laragon/www/DomainManagementSystem/tests/Feature/DomainBloomTest.php(130): Illuminate/Foundation/Testing/TestCase->get('http://localhos...')
+#59 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestCase.php(1548): Tests/Feature/DomainBloomTest->test_admin_can_manage_records_and_cannot_delete_themselves_or_the_last_admin()
+#60 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestCase.php(686): PHPUnit/Framework/TestCase->runTest()
+#61 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestRunner.php(106): PHPUnit/Framework/TestCase->runBare()
+#62 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestCase.php(516): PHPUnit/Framework/TestRunner->run(Object(Tests/Feature/DomainBloomTest))
+#63 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestSuite.php(374): PHPUnit/Framework/TestCase->run()
+#64 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestSuite.php(374): PHPUnit/Framework/TestSuite->run()
+#65 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/Framework/TestSuite.php(374): PHPUnit/Framework/TestSuite->run()
+#66 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(64): PHPUnit/Framework/TestSuite->run()
+#67 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/src/TextUI/Application.php(205): PHPUnit/TextUI/TestRunner->run(Object(PHPUnit/TextUI/Configuration/Configuration), Object(PHPUnit/Runner/ResultCache/DefaultResultCache), Object(PHPUnit/Framework/TestSuite))
+#68 A:/laragon/www/DomainManagementSystem/vendor/phpunit/phpunit/phpunit(104): PHPUnit/TextUI/Application->run(Array)
+#69 {main}
+"} 
+[2026-10-28 13:35:44] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'laravel' (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'laravel' (Connection: mysql, SQL: select count(*) as aggregate from `users` where `email` = meenalpatro@gmail.com) at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php:829)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#16 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#23 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#65 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#67 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'laravel' at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(45): Illuminate/Database/Connectors/Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate/Database/Connectors/Connector->createConnection('mysql:host=127....', Array, Array)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate/Database/Connectors/MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->Illuminate/Database/Connectors/{closure}()
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1339): call_user_func(Object(Closure))
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getPdo()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(423): Illuminate/Database/Connection->getPdoForSelect(false)
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate/Database/Connection->Illuminate/Database/{closure}('select count(*)...', Array)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate/Database/Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select count(*)...', Array, Object(Closure))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2914): Illuminate/Database/Connection->select('select count(*)...', Array, false)
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2902): Illuminate/Database/Query/Builder->runSelect()
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3456): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2903): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3383): Illuminate/Database/Query/Builder->get(Array)
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3311): Illuminate/Database/Query/Builder->aggregate('count', Array)
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php(54): Illuminate/Database/Query/Builder->count()
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php(949): Illuminate/Validation/DatabasePresenceVerifier->getCount('users', 'email', 'meenalpatro@gma...', NULL, NULL, Array)
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(660): Illuminate/Validation/Validator->validateUnique('email', 'meenalpatro@gma...', Array, Object(Illuminate/Validation/Validator))
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(459): Illuminate/Validation/Validator->validateAttribute('email', 'Unique')
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(494): Illuminate/Validation/Validator->passes()
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Validation/Validator.php(536): Illuminate/Validation/Validator->fails()
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php(124): Illuminate/Validation/Validator->validate()
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php(123): Illuminate/Http/Request->Illuminate/Foundation/Providers/{closure}(Array)
+#25 A:/laragon/www/DomainManagementSystem/app/Http/Controllers/AuthController.php(28): Illuminate/Http/Request->__call('validate', Array)
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/AuthController->register(Object(Illuminate/Http/Request))
+#27 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('register', Array)
+#28 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/AuthController), 'register')
+#29 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#31 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#32 A:/laragon/www/DomainManagementSystem/app/Http/Middleware/RedirectIfAuthenticated.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/RedirectIfAuthenticated->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#35 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#37 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(95): Illuminate/Routing/Middleware/ThrottleRequests->handleRequest(Object(Illuminate/Http/Request), Object(Closure), Array)
+#38 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/ThrottleRequests->handle(Object(Illuminate/Http/Request), Object(Closure), '6', '1')
+#39 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#40 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#42 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#43 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#44 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#45 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#47 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#48 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#49 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#50 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#51 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#52 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#53 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#54 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#55 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#56 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#57 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#58 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#59 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#60 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#61 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#62 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#66 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#67 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#68 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#69 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#70 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#71 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#72 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#73 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#74 A:/laragon/www/DomainManagementSystem/public/index.php(52): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#75 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('A://laragon//www//...')
+#76 {main}
+"} 
+[2026-11-13 18:09:48] local.ERROR: SQLSTATE[HY000] [2002] An attempt was made to access a socket in a way forbidden by its access permissions (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'domainbloom' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] An attempt was made to access a socket in a way forbidden by its access permissions (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'domainbloom' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php:829)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate/Database/Connection->runQueryCallback('select table_na...', Array, Object(Closure))
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select table_na...', Array, Object(Closure))
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(401): Illuminate/Database/Connection->select('select table_na...', Array, false)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate/Database/Connection->selectFromWriteConnection('select table_na...')
+#4 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate/Database/Schema/MySqlBuilder->getTables(false)
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate/Database/Schema/Builder->hasTable('migrations')
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(727): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(53): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(641): Illuminate/Database/Console/Migrations/StatusCommand->Illuminate/Database/Console/Migrations/{closure}()
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(84): Illuminate/Database/Migrations/Migrator->usingConnection(NULL, Object(Closure))
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call(Array)
+#16 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Command/Command.php(326): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#18 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Application.php(1129): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#19 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Application.php(325): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Migrations/StatusCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#20 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Application.php(176): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#22 A:/laragon/www/DomainManagementSystem/artisan(37): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#23 {main}
+
+[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] An attempt was made to access a socket in a way forbidden by its access permissions at A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
+[stacktrace]
+#0 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(45): Illuminate/Database/Connectors/Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate/Database/Connectors/Connector->createConnection('mysql:host=127....', Array, Array)
+#3 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate/Database/Connectors/MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate/Database/Connectors/ConnectionFactory->Illuminate/Database/Connectors/{closure}()
+#5 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1339): call_user_func(Object(Closure))
+#6 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(528): Illuminate/Database/Connection->getPdo()
+#7 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(423): Illuminate/Database/Connection->getPdoForSelect(false)
+#8 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate/Database/Connection->Illuminate/Database/{closure}('select table_na...', Array)
+#9 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate/Database/Connection->runQueryCallback('select table_na...', Array, Object(Closure))
+#10 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(431): Illuminate/Database/Connection->run('select table_na...', Array, Object(Closure))
+#11 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Connection.php(401): Illuminate/Database/Connection->select('select table_na...', Array, false)
+#12 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate/Database/Connection->selectFromWriteConnection('select table_na...')
+#13 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate/Database/Schema/MySqlBuilder->getTables(false)
+#14 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate/Database/Schema/Builder->hasTable('migrations')
+#15 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(727): Illuminate/Database/Migrations/DatabaseMigrationRepository->repositoryExists()
+#16 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(53): Illuminate/Database/Migrations/Migrator->repositoryExists()
+#17 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(641): Illuminate/Database/Console/Migrations/StatusCommand->Illuminate/Database/Console/Migrations/{closure}()
+#18 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php(84): Illuminate/Database/Migrations/Migrator->usingConnection(NULL, Object(Closure))
+#19 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Migrations/StatusCommand->handle()
+#20 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#21 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#22 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#23 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#24 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call(Array)
+#25 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Command/Command.php(326): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#26 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#27 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Application.php(1129): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#28 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Application.php(325): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Migrations/StatusCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#29 A:/laragon/www/DomainManagementSystem/vendor/symfony/console/Application.php(176): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#30 A:/laragon/www/DomainManagementSystem/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#31 A:/laragon/www/DomainManagementSystem/artisan(37): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#32 {main}
+"} 

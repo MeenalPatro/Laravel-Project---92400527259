@@ -1,0 +1,2 @@
+<article class="stat-card stat-<?php echo e($tone ?? 'pink'); ?>"><span class="stat-icon"><?php echo e($icon ?? '✿'); ?></span><span class="stat-sticker" aria-hidden="true">✦</span><div><p><?php echo e($label); ?></p><strong data-count-up="<?php echo e($value); ?>"><?php echo e($value); ?></strong><?php if(isset($hint)): ?><small><?php echo e($hint); ?></small><?php endif; ?></div></article>
+<?php /**PATH A:\laragon\www\DomainManagementSystem\resources\views/components/stat-card.blade.php ENDPATH**/ ?>

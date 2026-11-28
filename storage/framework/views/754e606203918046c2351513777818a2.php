@@ -1,0 +1,4 @@
+<?php if(session('success')): ?><div class="flash flash-success" role="status"><span>✿</span><p><?php echo e(session('success')); ?></p><button type="button" aria-label="Dismiss" data-dismiss>×</button></div><?php endif; ?>
+<?php if(session('error')): ?><div class="flash flash-error" role="alert"><span>!</span><p><?php echo e(session('error')); ?></p><button type="button" aria-label="Dismiss" data-dismiss>×</button></div><?php endif; ?>
+<?php if($errors->any()): ?><div class="flash flash-error" role="alert"><span>!</span><p>Please check the highlighted fields and try again.</p><button type="button" aria-label="Dismiss" data-dismiss>×</button></div><?php endif; ?>
+<?php /**PATH A:\laragon\www\DomainManagementSystem\resources\views/components/flash.blade.php ENDPATH**/ ?>
